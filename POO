@@ -38,3 +38,101 @@ class Pessoa (){
     
 }
    //----------------------------------------------------------------------------------------------------------------------------------------------------
+/**
+ * You can edit, run, and share this code.
+ * play.kotlinlang.org
+ */
+fun main() {
+   var usuario = ContaBanco(-100.0, 12232456, 5018) 
+   usuario.consultarSaldo(5018)
+   usuario.deposito(5018, 120.0)
+   usuario.consultarSaldo(5018)
+   usuario.saque(5018, 180.0)
+   usuario.consultarSaldo(5018)
+
+
+
+
+
+   
+   
+   
+}
+
+
+
+class ContaBanco(var saldo: Double, var numeroConta: Long, var senhaCorreta: Int){ 
+    
+    fun consultarSaldo(senha: Int){
+        
+        if(senha == senhaCorreta){
+            println("Saldo: R$$saldo")
+        }else{
+            println("Senha Incorreta")
+        }
+        
+    }
+    
+    
+    
+    fun deposito(senha: Int, valor: Double){
+    if(senha == senhaCorreta){
+        if (valor <= 0){
+            println("Deposito de R$$valor impossivel de ser realizado")
+        }else{
+            
+        saldo += valor
+        println("Deposito de R$$valor realizado com sucesso")
+        }
+        
+    }else{
+        println("senha Incorreta")
+        
+        }  
+    
+    }
+     fun saque(senha: Int, valor: Double){
+    if(senha == senhaCorreta){
+        if (valor <= 120.0){
+            println("Saque de R$$valor impossivel de ser realizado")
+            
+        }else if(valor > saldo){
+            println("Saque de R$$valor impossivel de ser realizado")
+
+            
+            
+        }
+                        else{
+            
+        saldo -= valor
+        println("Saque de R$$valor realizado com sucesso")
+        }
+        
+    }else{
+        println("senha Incorreta")
+    
+    
+}
+    
+     }
+}
+
+
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
